@@ -187,7 +187,7 @@ class WechatGateway extends AbstractGateway
 
     protected function createGateway($type)
     {
-        $config = $this->getSetting();
+        $config = $this->getSetting($type);
         $gateway = Omnipay::create($type);
         $gateway->setAppId($config['appid']);
         $gateway->setMchId($config['mch_id']);
